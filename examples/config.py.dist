@@ -13,7 +13,7 @@ MQTT_CONF = {
   'prefix': '/home_sweet_home/nibe-1255-12'
 }
 
-NIBE_UPLINK_CONF = {
+MYUPWAY_CONF = {
   'username': "example@example.com",
   'password': "nibe_uplink_pass",
   "hpid": "99999", # heat pump id
