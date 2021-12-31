@@ -1,5 +1,5 @@
 # MyUpway Downlink
-Get variables from Nibe Uplink. Based on https://github.com/yozik04/nibe_downlink
+Get variables from MyUpway. Based on https://github.com/yozik04/nibe_downlink
 
 # Requirements
 Your heatpump should be registered in MyUpway. This module fetches data from MyUpway
