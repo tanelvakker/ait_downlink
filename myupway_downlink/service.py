@@ -9,7 +9,7 @@ import requests
 logger = logging.getLogger()
 
 
-class NibeDownlink(object):
+class MyUpwayDownlink(object):
   def __init__(self, username, password, hpid, variables):
     self.auth_data = {
       "email": username,
@@ -21,7 +21,7 @@ class NibeDownlink(object):
     self.session = requests.Session()
 
   def login(self):
-    auth_result = self.session.post('https://www.nibeuplink.com/LogIn', self.auth_data)
+    auth_result = self.session.post('https://www.myupway.com/LogIn', self.auth_data)
     if auth_result.status_code == 200:
       self.authenticated = True
       logger.info("Succesfully authenticated")
@@ -42,9 +42,9 @@ class NibeDownlink(object):
   def getValues(self):
     if not self.authenticated:
       if not self.login():
-        raise Exception("Unable to get Nibe uplink values. Authentication failed")
+        raise Exception("Unable to get MyUpway uplink values. Authentication failed")
 
-    variable_query_result = self.session.post('https://www.nibeuplink.com/PrivateAPI/Values', {
+    variable_query_result = self.session.post('https://www.myupway.com/PrivateAPI/Values', {
       "hpid": self.hpid,
       "variables": self.variables
     })
