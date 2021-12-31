@@ -13,7 +13,7 @@ Your heatpump should be registered in MyUpway. This module fetches data from MyU
 ``` python
 from pprint import pprint
 
-from nibe_downlink import MyUpwayDownlink
+from myupway_downlink import MyUpwayDownlink
 
 MYUPWAY_CONF = {
   'username': "example@example.com",
