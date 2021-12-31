@@ -4,11 +4,11 @@ import time
 from paho.mqtt.client import Client as MQTTClient
 
 from config import NIBE_UPLINK_CONF, MQTT_CONF
-from nibe_downlink import NibeDownlink
+from myupway_downlink import MyUpwayDownlink
 
 logger = logging.getLogger()
 
-nd = NibeDownlink(**NIBE_UPLINK_CONF)
+nd = MyUpwayDownlink(**MYUPWAY_CONF)
 mqtt_client = MQTTClient()
 if 'auth' in MQTT_CONF:
   mqtt_client.username_pw_set(**MQTT_CONF['auth'])
@@ -24,5 +24,5 @@ while True:
       for key, value in values.iteritems():
         mqtt_client.publish(MQTT_CONF['prefix'] + '/variables/' + str(key), value, retain=True)
   except Exception as e:
-    logger.exception("Failed to get Nibe uplink values")
+    logger.exception("Failed to get MyUpway values")
   time.sleep(60)
