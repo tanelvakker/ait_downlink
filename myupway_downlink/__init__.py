@@ -1,3 +1,3 @@
-from service import MyUpwayDownlink
+from .service import MyUpwayDownlink
 
 __all__ = ["MyUpwayDownlink"]
